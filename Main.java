@@ -1,10 +1,21 @@
 import java.io.*;
 
 public class Main {
-  public static void main(String[] args) throws IOException{
-    FileOutputStream fos = new FileOutputStream("test2.dat", true);
-    fos.write(65);
-    fos.flush();
-    fos.close();
+  public static void main(String[] args) {
+    FileWriter fw = null;
+    try {
+      fw = new FileWriter("rpgsave.dat", true);
+      fw.write('A');
+      fw.flush();
+    } catch (IOException e) {
+      //TODO: handle exception
+      System.out.println("ファイル書き込みエラーです");
+    } finally {
+      if(fw != null) {
+        try {
+          fw.close();
+        } catch(IOException e2) {}
+      }
+    }
   }
 }
