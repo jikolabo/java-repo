@@ -1,21 +1,21 @@
+
 import java.io.*;
 
 public class Main {
-  public static void main(String[] args) {
-    FileWriter fw = null;
-    try {
-      fw = new FileWriter("rpgsave.dat", true);
-      fw.write('A');
-      fw.flush();
-    } catch (IOException e) {
-      //TODO: handle exception
-      System.out.println("ファイル書き込みエラーです");
-    } finally {
-      if(fw != null) {
-        try {
-          fw.close();
-        } catch(IOException e2) {}
-      }
+  public static void main(String[] args) throws Exception {
+    String inFile = args[0];
+    String outFile = args[2];
+
+    FileInputStream fis = new FileInputStream(inFile);
+    FileOutputStream fos = new FileOutputStream(outFile);
+    int i = fis.read();
+    
+    while(i != -1) {
+      fos.write(i);
+      i = fis.read();
     }
+    fos.flush();
+    fos.close();
+    fis.close();
   }
 }
