@@ -1,4 +1,5 @@
 public class item {
+    
     private String name;
     private int price;
     private int weight;
