@@ -1,0 +1,1 @@
+memberSearchIndex = [{"l":"Account()","h":"","u":"%3Cinit%3E()"},{"l":"transfer(Account, int)","h":"","u":"transfer(jp.miyabilink.atm.Account,int)"}]
